@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="personalise.css" />
+  </head>
+  <body>
+  <section>
+    <div class="container-fluid">
+      <div class="row d-flex flex-column-reverse flex-md-row">
+        <div class="col-md-2 d-block text-center" id="sideBar">
+          <h1>Personalise</h1>
+          <h4>Your Items</h4>
+
+          <div id="wrapper">
+            <button id="show">
+              <i class="bi bi-image"></i>
+              Image or Brands</button>
+            <div class="" id="content">
+              <input
+                type="file"
+                name="logos"
+                id="image_input"
+                accept="image/png, image/jpg"
+              />
+              <label for="image_input">
+                <i class="bi bi-image"></i>
+                Choose a Photo
+              </label>
+            </div>
+            <button id="show">Text & Styles</button>
+            <div class="" id="content">
+             
+            </div>
+            <button id="show">Colors</button>
+            <div class="" id="content">
+            
+            </div>
+            <button id="show">Preview</button>
+            <div class="" id="content">
+            
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-10 d-block text-center" id="mainPage">
+          <div class="image_container" id="image_container">
+            <img src="image/bag.jpg" alt="bag" id="bg-image">
+            <div id="imagePreview" class="image-preview">
+              <img src="" alt="Image Preview" class="image-preview-image" />
+              <span class="image-preview-text">Image Preview</span>
+            </div>
+          </div>
+          <button id="clear_btn">Clear Uploaded Image</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+      const content = document.getElementById("content");
+      const button = document.getElementById("show");
+      button.onclick = function () {
+        if (content.className == "open") {
+          content.className = "";
+         // button.innerHTML = "";
+        } else {
+          content.className = "open";
+          //button.innerHTML = "Show Less";
+        }
+      };
+    </script>
+    <script>
+      const clear_btn = document.getElementById("clear_btn");
+      clear_btn.disabled = true;
+      const inpFile = document.getElementById("image_input");
+      const previewContainer = document.getElementById("imagePreview");
+      const PreviewImage = previewContainer.querySelector(
+        ".image-preview-image",
+      );
+      const PreviewText = previewContainer.querySelector(".image-preview-text");
+      inpFile.addEventListener("change", function () {
+        const file = this.files[0];
+        //console.log(file);
+        if (file) {
+          const reader = new FileReader();
+          PreviewText.style.display = "none";
+          PreviewImage.style.display = "block";
+
+          reader.addEventListener("load", function () {
+            clear_btn.disabled = false;
+            clear_btn.style.backgroundColor = "#492B7C";
+            //console.log(this);
+          PreviewImage.setAttribute("src", this.result);
+          });
+          reader.readAsDataURL(file);
+        }
+        else{
+          PreviewText.style.display = null;
+          PreviewImage.style.display = null;
+          PreviewImage.setAttribute("src", "");
+        }
+        clear_btn.addEventListener("click", function(){
+          inpFile.value = "";
+          PreviewText.style.display = null;
+          PreviewImage.style.display = null;
+          PreviewImage.setAttribute("src", ""); 
+        });
+      });
+
+   
+         // const clear_btn = document.getElementById("clear_btn");
+      // clear_btn.disabled = true;
+      // var image_holder ="";
+      // const image_input = document.querySelector("#image_input");
+      // let uploaded_image = "";
+      // image_content = document.querySelector("#display_image");
+      // image_input.addEventListener("change", function () {
+      //     const reader = new FileReader();
+      //     reader.addEventListener("load", () => {
+      //     uploaded_image = reader.result;
+      //     image_content.style.backgroundImage = `url(${uploaded_image})`;
+      //     clear_btn.disabled = false;
+      //     clear_btn.onclick = ()=>{
+      //    image_content.style.backgroundImage = "";
+
+      //   }
+      //   });
+
+      //   reader.readAsDataURL(this.files[0]);
+      // }); 
+    </script>
+  </body>
+</html>
