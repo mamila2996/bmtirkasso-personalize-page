@@ -13,14 +13,15 @@
   <section>
     <div class="container-fluid">
       <div class="row d-flex flex-column-reverse flex-md-row">
-        <div class="col-md-2 d-block text-center" id="sideBar">
-          <h1>Personalise</h1>
-          <h4>Your Items</h4>
+        <div class="col-md-2 d-flex d-md-block" id="sideBar">
+          <h1 class="d-none d-md-block">Personalise</h1>
+          <h4 class="d-none d-md-block">Your Items</h4>
 
-          <div id="wrapper">
+          <div id="wrapper" class="">
             <button id="show">
               <i class="bi bi-image"></i>
-              Image or Brands</button>
+               <span class="text">Image or Brands</span> 
+            </button>
             <div class="" id="content">
               <input
                 type="file"
@@ -33,15 +34,24 @@
                 Choose a Photo
               </label>
             </div>
-            <button id="show">Text & Styles</button>
+            <button id="show">
+              <i class="bi bi-fonts"></i>
+            <span class="text">Text & Styles</span>  
+            </button>
             <div class="" id="content">
              
             </div>
-            <button id="show">Colors</button>
+            <button id="show">
+              <i class="bi bi-eyedropper"></i>
+            <span class="text">Colors</span>  
+            </button>
             <div class="" id="content">
             
             </div>
-            <button id="show">Preview</button>
+            <button id="show">
+              <i class="bi bi-eye"></i>
+            <span class="text">Preview</span>  
+            </button>
             <div class="" id="content">
             
             </div>
@@ -50,7 +60,7 @@
 
         <div class="col-md-10 d-block text-center" id="mainPage">
           <div class="image_container" id="image_container">
-            <img src="image/bag.jpg" alt="bag" id="bg-image">
+            <img class="img-fluid img-responsive" src="image/bag.jpg" alt="bag" id="bg-image">
             <div id="imagePreview" class="image-preview">
               <img src="" alt="Image Preview" class="image-preview-image" />
               <span class="image-preview-text">Image Preview</span>
