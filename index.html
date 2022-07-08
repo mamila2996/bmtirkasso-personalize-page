@@ -6,72 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personalise</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="personalise.css" />
   </head>
   <body>
-  <section>
-    <div class="container-fluid">
-      <div class="row d-flex flex-column-reverse flex-md-row">
-        <div class="col-md-2 d-flex d-md-block" id="sideBar">
-          <h1 class="d-none d-md-block">Personalise</h1>
-          <h4 class="d-none d-md-block">Your Items</h4>
+    <section>
+      <div class="container-fluid">
+        <div class="row d-flex flex-column-reverse flex-md-row">
+          <div class="col-md-3 d-flex d-md-block" id="sideBar">
+            <h1 class="d-none d-md-block">Personalise</h1>
+            <h4 class="d-none d-md-block">Your Items</h4>
+           
 
-          <div id="wrapper" class="">
-            <button id="show">
-              <i class="bi bi-image"></i>
-               <span class="text">Image or Brands</span> 
-            </button>
-            <div class="" id="content">
-              <input
-                type="file"
-                name="logos"
-                id="image_input"
-                accept="image/png, image/jpg"
-              />
-              <label for="image_input">
-                <i class="bi bi-image"></i>
-                Choose a Photo
-              </label>
-            </div>
-            <button id="show">
-              <i class="bi bi-fonts"></i>
-            <span class="text">Text & Styles</span>  
-            </button>
-            <div class="" id="content">
-             
-            </div>
-            <button id="show">
-              <i class="bi bi-eyedropper"></i>
-            <span class="text">Colors</span>  
-            </button>
-            <div class="" id="content">
-            
-            </div>
-            <button id="show">
-              <i class="bi bi-eye"></i>
-            <span class="text">Preview</span>  
-            </button>
-            <div class="" id="content">
-            
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-10 d-block text-center" id="mainPage">
-          <div class="image_container" id="image_container">
-            <img class="img-fluid img-responsive" src="image/bag.jpg" alt="bag" id="bg-image">
-            <div id="imagePreview" class="image-preview">
-              <img src="" alt="Image Preview" class="image-preview-image" />
-              <span class="image-preview-text">Image Preview</span>
+            <div id="wrapper" class="d-flex d-md-block">
+              <div class="">
+                <button id="show">
+                  <i class="bi bi-image"></i>
+                  <span class="text">Image or Brands</span>
+                </button>
+                <div class="" id="content">
+                  <input
+                    type="file"
+                    name="logos"
+                    id="image_input"
+                    accept="image/png, image/jpg"
+                  />
+                  <label for="image_input">
+                    <i class="bi bi-image"></i>
+                    Choose a Photo
+                  </label>
+  
+                  
+                </div>
+              </div>
+              
+              
+              <button id="show">
+                <i class="bi bi-fonts"></i>
+                <span class="text">Text & Styles</span>
+              </button>
+              <div class="" id="content"></div>
+              <button id="show">
+                <i class="bi bi-eyedropper"></i>
+                <span class="text">Colors</span>
+              </button>
+              <div class="" id="content"></div>
+              <button id="show">
+                <i class="bi bi-eye"></i>
+                <span class="text">Preview</span>
+              </button>
+              <div class="" id="content"></div>
             </div>
           </div>
-          <button id="clear_btn">Clear Uploaded Image</button>
-        </div>
+
+          <div class="col-12 col-md-9 d-block text-center" id="mainPage">
+            <div class="image_container d-block" id="image_container">
+              <img class="" src="image/bag.jpg" alt="bag" id="bg-image" width=""/>
+              <div id="imagePreview" class="image-preview">
+                <img src="" alt="Image Preview" class="image-preview-image" />
+                <span class="image-preview-text">Image Preview</span>
+              </div>
+              <div class="" id="buttons">
+                <button class="btn btn-primary" id="clear_btn">Cancel</button>
+                <button class="btn btn-outline-primary" id="confirm_btn">Confirm</button>
+              </div>
+            </div>
+            
+            
+              
+         
+            
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
     <script src="js/bootstrap.bundle.js"></script>
     <script>
       const content = document.getElementById("content");
@@ -79,7 +90,7 @@
       button.onclick = function () {
         if (content.className == "open") {
           content.className = "";
-         // button.innerHTML = "";
+          // button.innerHTML = "";
         } else {
           content.className = "open";
           //button.innerHTML = "Show Less";
@@ -107,25 +118,23 @@
             clear_btn.disabled = false;
             clear_btn.style.backgroundColor = "#492B7C";
             //console.log(this);
-          PreviewImage.setAttribute("src", this.result);
+            PreviewImage.setAttribute("src", this.result);
           });
           reader.readAsDataURL(file);
-        }
-        else{
+        } else {
           PreviewText.style.display = null;
           PreviewImage.style.display = null;
           PreviewImage.setAttribute("src", "");
         }
-        clear_btn.addEventListener("click", function(){
+        clear_btn.addEventListener("click", function () {
           inpFile.value = "";
           PreviewText.style.display = null;
           PreviewImage.style.display = null;
-          PreviewImage.setAttribute("src", ""); 
+          PreviewImage.setAttribute("src", "");
         });
       });
 
-   
-         // const clear_btn = document.getElementById("clear_btn");
+      // const clear_btn = document.getElementById("clear_btn");
       // clear_btn.disabled = true;
       // var image_holder ="";
       // const image_input = document.querySelector("#image_input");
@@ -144,7 +153,7 @@
       //   });
 
       //   reader.readAsDataURL(this.files[0]);
-      // }); 
+      // });
     </script>
   </body>
 </html>

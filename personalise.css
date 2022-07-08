@@ -14,10 +14,13 @@
 #mainPage {
   height: 100vh;
   background-color: rgb(255, 255, 255);
+  text-align: center;
+  overflow: hidden;
 }
 
 #sideBar #wrapper {
 position: relative;
+gap: 5px;
 overflow: hidden;
 white-space: nowrap;
 top: 50%;
@@ -79,8 +82,13 @@ h1,h4{
   margin-right: 15px;
 }
 #wrapper .text{
-  font-size: 20px;
+  display: flex;
+  flex: column-reverse;
   margin-right: auto;
+}
+#wrapper #content{
+  display: flex;
+  flex-direction: column;
 }
 
 #wrapper #content .bi{
@@ -91,34 +99,62 @@ h1,h4{
 
 
 #mainPage #image_container {
-  position: relative;
-  /* border: 1px solid black; */
-  width: 100%;
-  text-align: center;
+transform : translateZ(0);
+text-align: center;
 }
 #mainPage #image_container #bg-image{
-    width: 50%;
+ position: fixed;
+ min-width: 570px;
+ min-height: 570px;
+ left: 50%;
+ transform: translateX(-50%);
+ 
+/*   
+  width: 50%; */
+
+  
 }
 
 #mainPage #image_container #imagePreview {
-  position: absolute;
+  position: fixed;
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  max-height: 100px;
   margin-top: 15px;
   color: white;
 }
 #image_container #imagePreview .image-preview-image {
+ 
   width: 100%;
   display: none;
 }
+#mainPage #image_container #buttons{
+  position: absolute;
+  top: 600px;
+  /* border: 1px solid black; */
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 #clear_btn {
-  border: none;
-  background-color: rgb(123, 140, 204);
+  margin: 10px;
   border-radius: 10px;
-  width: 200px;
-  height: 40px;
-  color: white;
+  width: 220px;
+  height: 45px;
+ 
+}
+#confirm_btn {
+
+  margin: 10px;
+/* transform: translateX(-50%); */
+  border-radius: 10px;
+  width: 220px;
+  height: 45px;
 }
