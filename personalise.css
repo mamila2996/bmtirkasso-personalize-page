@@ -9,160 +9,233 @@
 #sideBar {
   height: 100vh;
   background-color: #FFC5D0;
-  display: block;
-  text-align: center;
-  position: relative;
-  overflow: visible;
 }
 #mainPage {
   height: 100vh;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  overflow: hidden;
 }
 
 #sideBar #wrapper {
-position: relative;
 gap: 5px;
-/* overflow: scroll; */
-white-space: nowrap;
-top: 50%;
-transform: translateY(-50%);
 }
-#sideBar #wrapper #content {  
+#headers{
+  margin-bottom: 150px;
+}
+#sideBar #wrapper #toshow #content {  
   font-size: medium;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all 0.7s ease; 
   height: 0;
   overflow: hidden;
-  transition: all 0.7s ease;
 }
-#sideBar #wrapper #content.open {
-  height: auto;
-  width: 100%;
-  border: 1px solid black;
+#sideBar #wrapper #toshow #content1 {  
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all 0.7s ease; 
+  height: 0;
+  overflow: hidden;
+}
+#sideBar #wrapper #toshow #content2 {  
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all 0.7s ease; 
+  height: 0;
+  overflow: hidden;
+}
+#content2 #colorpick label{
+height: 50px;
+text-align: center;
+}
+input[type="color"]{
+  height: 50px;
+  width: 100px;
+}
+#sideBar #wrapper #toshow #content3 {  
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all 0.7s ease; 
+  height: 0;
+  overflow: hidden;
+}
+#sideBar #wrapper #toshow #content.open {
   transition: all 0.7s ease;
   margin-bottom: 10px;
+  height: 50px;
+  width: 100%;
+}
+#sideBar #wrapper #toshow #content1.open {
+  transition: all 0.7s ease;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 100%;
+}
+#sideBar #wrapper #toshow #content2.open {
+  transition: all 0.7s ease;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 100%;
+  
+}
+
+#sideBar #wrapper #toshow #content3.open {
+  transition: all 0.7s ease;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 100%;
 }
 #sideBar #wrapper #show {
   width: 100%;
   height: 55px;
   border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #492b7c;
   color: white;
   border-radius: 25px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
+  overflow: hidden;
+}
+#sideBar #wrapper #show1 {
+  width: 100%;
+  height: 55px;
+  border: none;
+  background: #492b7c;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 10px; 
+  overflow: hidden;
+}
+#sideBar #wrapper #show2 {
+  width: 100%;
+  height: 55px;
+  border: none;
+  background: #492b7c;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 10px; 
+  overflow: hidden;
+}
+#sideBar #wrapper #show3 {
+  width: 100%;
+  height: 55px;
+  border: none;
+  background: #492b7c;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 10px; 
+  overflow: hidden;
 }
 input[type="file"]{
-    display: none;
-    overflow: hidden;
-    white-space: nowrap;
+  display: none;
 }
 label{
     color: white;
-    height: 55px;
-    width: 100%;
     background-color: #FF8199;
     font-size: 20px;
+    font-family: sans-serif; 
+    height: 50px;
+    width: 100%;
+    border-bottom-right-radius: 20px;   
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    font-family: sans-serif;
 }
 h1,h4{
     color:#492b7c;
 }
-#wrapper .bi{
-  width: 40px;
-  border: 1px solid gray;
+#wrapper #toshow #content{
+ 
+}
+#wrapper #toshow #content label .bi{
   border-radius: 50%;
-  font-size: 25px;
-  margin-left: 15px;
-  margin-right: 15px;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  
 }
-#wrapper .text{
-  display: flex;
-  flex: column-reverse;
-  margin-right: auto;
-}
-#wrapper #content{
-  display: flex;
-  flex-direction: column;
+#wrapper #toshow .text{
+font-size: 18px;
+
 }
 
-#wrapper #content .bi{
-  width: 40px;
+
+#wrapper #toshow #content .bi{
+  width: 100px;
+  height: 50px;
   border-radius: none;
-  border: none;
+  border: none; 
 }
 
 
 #mainPage #image_container {
 transform : translateZ(0);
-position: absolute;
-width: 700px;
-height: 620px;
-left: 50%;
-transform: translateX(-50%);
-/* text-align: center; */
 }
 #mainPage #image_container #bg-image{
- position: absolute;
- width: 500px;
- height: 500px;
- left: 50%;
- transform: translateX(-50%);
- border:1px solid #492b7c;
-/*   
-  width: 50%; */
-
-  
+ /* border:5px solid #492b7c;  */
+ width: 57%;
 }
 
 #mainPage #image_container #imagePreview {
+  transform : translateZ(0);
   position: fixed;
-  top: 120px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 100px;
   max-height: 100px;
-  min-width: 100px;
-  max-height: 100px;
-  margin-top: 15px;
+  /* min-width: 100px;
+  max-height: 100px; 
+  margin-top: 15px;*/
   color: white;
 }
 #image_container #imagePreview .image-preview-image {
- 
   width: 100%;
   display: none;
 }
-#mainPage #image_container #buttons{
-  position: absolute;
-  top: 560px;
-  /* border: 1px solid black; */
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 400px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+#image_container #buttons{
+  margin-top: 10px;
 }
 #clear_btn {
-  margin: 10px;
+  margin: 5px;
   border-radius: 10px;
-  width: 220px;
-  height: 45px;
- 
+  width: 150px;
+  height: 40px;
 }
 #confirm_btn {
 
-  margin: 10px;
+  margin: 5px;
 /* transform: translateX(-50%); */
   border-radius: 10px;
-  width: 220px;
-  height: 45px;
+  width: 150px;
+  height: 40px; 
 }
+@media only screen and (max-width: 768px) {
+  #mainPage {
+    order: 1;
+  }
+  #sideBar{
+    order: 2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #mainPage {
+    height: 90vh;  
+  }
+}
+@media only screen and (max-width: 500px) {
+  #mainPage {
+    height: 70vh;
+  }
+  #mainPage #image_container #imagePreview {
+    top: 55px;
+    
+  }
+ 
+}
+

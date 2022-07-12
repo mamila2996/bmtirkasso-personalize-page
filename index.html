@@ -15,70 +15,94 @@
   <body>
     <section class="text-center">
       <div class="container-fluid">
-        <div class="row d-flex flex-column-reverse flex-lg-row">
-          <div class="col-md-3 d-flex d-lg-block" id="sideBar">
-            <h1 class="d-none d-lg-block">Personalise</h1>
-            <h4 class="d-none d-lg-block">Your Items</h4>
-           
-
-            <div id="wrapper" class="d-flex d-lg-block">
-              <div class="">
-                <button id="show">
-                  <i class="bi bi-image"></i>
-                  <span class="text">Image or Brands</span>
-                </button>
-                <div class="" id="content">
-                  <input
-                    type="file"
-                    name="logos"
-                    id="image_input"
-                    accept="image/png, image/jpg"
-                  />
-                  <label for="image_input">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-3" id="sideBar">
+            <div class="d-none d-md-block" id="headers">
+              <h1 class="">Personalise</h1>
+              <h4 class="">Your Items</h4>
+            </div>
+            <div class="container-fluid">
+              <div
+                id="wrapper"
+                class="d-flex justify-content-around align-items-center d-md-block"
+              >
+                <div class="col-3 col-md-12" id="toshow">
+                  <button id="show">
                     <i class="bi bi-image"></i>
-                    Choose a Photo
-                  </label>
-  
-                  
+                    <span class="text">Image or Brands</span>
+                  </button>
+                  <div class="text-center" id="content">
+                    <input
+                      type="file"
+                      name="logos"
+                      id="image_input"
+                      accept="image/png, image/jpg"
+                    />
+                    <label for="image_input">
+                      <i class="bi bi-image"></i>
+                      Choose a Photo
+                    </label>
+                  </div>
+                </div>
+
+                <div
+                  class="col-3 col-md-12" id="toshow"
+                >
+                  <button id="show1">
+                    <i class="bi bi-fonts"></i>
+                    <span class="text">Text & Styles</span>
+                  </button>
+                  <div class="" id="content1">
+                    <input type="text" placeholder="your brand name">
+                    <div class="d-flex" id="fontStyle">
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3 col-md-12" id="toshow">
+                  <button id="show2">
+                    <i class="bi bi-eyedropper"></i>
+                    <span class="text">Colors</span>
+                  </button>
+                  <div class="" id="content2">
+                    <div class="d-flex justify-content-around align-items-center" id="colorpick">
+                    <input type="color" id="colorSelect">
+                    <label for="colorSelect">
+                      <span class="text-center" id="pickColortext">pick a color</span>
+                    </label>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-3 col-md-12" id="toshow">
+                  <button id="show3">
+                    <i class="bi bi-eye"></i>
+                    <span class="text">Preview</span>
+                  </button>
+                  <div class="" id="content3"></div>
                 </div>
               </div>
-              
-              
-              <button id="show">
-                <i class="bi bi-fonts"></i>
-                <span class="text">Text & Styles</span>
-              </button>
-              <div class="" id="content"></div>
-              <button id="show">
-                <i class="bi bi-eyedropper"></i>
-                <span class="text">Colors</span>
-              </button>
-              <div class="" id="content"></div>
-              <button id="show">
-                <i class="bi bi-eye"></i>
-                <span class="text">Preview</span>
-              </button>
-              <div class="" id="content"></div>
             </div>
           </div>
 
-          <div class="col-12 col-md-9 d-block text-center" id="mainPage">
-            <div class="image_container d-block" id="image_container">
-              <img class="" src="image/bag.jpg" alt="bag" id="bg-image" width=""/>
+          <div class="col-12 col-sm-12 col-md-9 text-center" id="mainPage">
+            <div class="image_container" id="image_container">
+              <img
+                class="img-fluid img-responsive"
+                src="image/bag.jpg"
+                alt="bag"
+                id="bg-image"
+              />
               <div id="imagePreview" class="image-preview">
                 <img src="" alt="Image Preview" class="image-preview-image" />
                 <span class="image-preview-text">Image Preview</span>
               </div>
               <div class="" id="buttons">
                 <button class="btn btn-primary" id="clear_btn">Cancel</button>
-                <button class="btn btn-outline-primary" id="confirm_btn">Confirm</button>
+                <button class="btn btn-outline-primary" id="confirm_btn">
+                  Confirm
+                </button>
               </div>
             </div>
-            
-            
-              
-         
-            
           </div>
         </div>
       </div>
@@ -87,12 +111,45 @@
     <script>
       const content = document.getElementById("content");
       const button = document.getElementById("show");
+      const content1 = document.getElementById("content1");
+      const button1 = document.getElementById("show1");
+      const content2 = document.getElementById("content2");
+      const button2 = document.getElementById("show2");
+      const content3 = document.getElementById("content3");
+      const button3 = document.getElementById("show3");
       button.onclick = function () {
         if (content.className == "open") {
           content.className = "";
           // button.innerHTML = "";
         } else {
           content.className = "open";
+          //button.innerHTML = "Show Less";
+        }
+      };
+      button1.onclick = function () {
+        if (content1.className == "open") {
+          content1.className = "";
+          // button.innerHTML = "";
+        } else {
+          content1.className = "open";
+          //button.innerHTML = "Show Less";
+        }
+      };
+      button2.onclick = function () {
+        if (content2.className == "open") {
+          content2.className = "";
+          // button.innerHTML = "";
+        } else {
+          content2.className = "open";
+          //button.innerHTML = "Show Less";
+        }
+      };
+      button3.onclick = function () {
+        if (content3.className == "open") {
+          content3.className = "";
+          // button.innerHTML = "";
+        } else {
+          content3.className = "open";
           //button.innerHTML = "Show Less";
         }
       };
